@@ -1,0 +1,34 @@
+# .NET build artifacts
+bin/
+obj/
+out/
+
+# Database files (will be mounted as volume)
+App_Data/*.db
+App_Data/*.db-shm
+App_Data/*.db-wal
+
+# Logs
+Logs/
+*.log
+
+# User secrets
+appsettings.Development.json
+appsettings.*.json
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+Tests/
+*.test.cs
+*.Test.cs

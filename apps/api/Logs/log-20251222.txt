@@ -1,0 +1,455 @@
+2025-12-22 17:12:51.117 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2025-12-22 17:12:51.155 +01:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-22 17:12:51.163 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsLock' AND "type" = 'table';
+2025-12-22 17:12:51.170 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsLock" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK___EFMigrationsLock" PRIMARY KEY,
+    "Timestamp" TEXT NOT NULL
+);
+2025-12-22 17:12:51.172 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT OR IGNORE INTO "__EFMigrationsLock"("Id", "Timestamp") VALUES(1, '2025-12-22 16:12:51.1715561+00:00');
+SELECT changes();
+2025-12-22 17:12:51.212 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2025-12-22 17:12:51.223 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-12-22 17:12:51.226 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-12-22 17:12:51.233 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-22 17:12:51.238 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "__EFMigrationsLock";
+2025-12-22 17:12:51.319 +01:00 [INF] User profile is available. Using 'C:\Users\s.salanoi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-22 17:12:51.327 +01:00 [INF] Creating key {fce4e539-b33e-46c6-b3bf-ccd77a5d4091} with creation date 2025-12-22 16:12:51Z, activation date 2025-12-22 16:12:51Z, and expiration date 2026-03-22 16:12:51Z.
+2025-12-22 17:12:51.339 +01:00 [INF] Writing data to file 'C:\Users\s.salanoi\AppData\Local\ASP.NET\DataProtection-Keys\key-fce4e539-b33e-46c6-b3bf-ccd77a5d4091.xml'.
+2025-12-22 17:12:51.380 +01:00 [INF] Now listening on: http://localhost:5000
+2025-12-22 17:12:51.381 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-22 17:12:51.382 +01:00 [INF] Hosting environment: Production
+2025-12-22 17:12:51.382 +01:00 [INF] Content root path: C:\Work\Course\techstack-scanner\apps\api
+2025-12-22 17:12:58.075 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 2
+2025-12-22 17:12:58.088 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-22 17:12:58.120 +01:00 [INF] Executing endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 17:12:58.128 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Api.Models.DTOs.LoginResponse] Login(Api.Models.DTOs.LoginRequest) on controller Api.Controllers.AuthController (api).
+2025-12-22 17:12:58.158 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-12-22 17:12:58.176 +01:00 [INF] Executed action Api.Controllers.AuthController.Login (api) in 44.4471ms
+2025-12-22 17:12:58.179 +01:00 [INF] Executed endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 17:12:58.181 +01:00 [INF] HTTP POST /api/auth/login responded 400 in 91.6490 ms
+2025-12-22 17:12:58.183 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 400 null application/problem+json; charset=utf-8 108.7105ms
+2025-12-22 17:13:15.250 +01:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-22 17:13:15.304 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsLock' AND "type" = 'table';
+2025-12-22 17:13:15.310 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT OR IGNORE INTO "__EFMigrationsLock"("Id", "Timestamp") VALUES(1, '2025-12-22 16:13:15.3090329+00:00');
+SELECT changes();
+2025-12-22 17:13:15.358 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2025-12-22 17:13:15.367 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-12-22 17:13:15.371 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-12-22 17:13:15.377 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-22 17:13:15.382 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "__EFMigrationsLock";
+2025-12-22 17:13:15.442 +01:00 [INF] User profile is available. Using 'C:\Users\s.salanoi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-22 17:13:15.489 +01:00 [INF] Now listening on: http://localhost:5000
+2025-12-22 17:13:15.490 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-22 17:13:15.491 +01:00 [INF] Hosting environment: Production
+2025-12-22 17:13:15.491 +01:00 [INF] Content root path: C:\Work\Course\techstack-scanner\apps\api
+2025-12-22 17:13:22.459 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 52
+2025-12-22 17:13:22.473 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-22 17:13:22.495 +01:00 [INF] Executing endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 17:13:22.505 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Api.Models.DTOs.LoginResponse] Login(Api.Models.DTOs.LoginRequest) on controller Api.Controllers.AuthController (api).
+2025-12-22 17:13:22.531 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-12-22 17:13:22.552 +01:00 [INF] Executed action Api.Controllers.AuthController.Login (api) in 43.1452ms
+2025-12-22 17:13:22.555 +01:00 [INF] Executed endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 17:13:22.556 +01:00 [INF] HTTP POST /api/auth/login responded 400 in 82.3815 ms
+2025-12-22 17:13:22.558 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 400 null application/problem+json; charset=utf-8 99.9194ms
+2025-12-22 17:13:34.751 +01:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-22 17:13:34.811 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsLock' AND "type" = 'table';
+2025-12-22 17:13:34.817 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT OR IGNORE INTO "__EFMigrationsLock"("Id", "Timestamp") VALUES(1, '2025-12-22 16:13:34.8155316+00:00');
+SELECT changes();
+2025-12-22 17:13:34.860 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2025-12-22 17:13:34.869 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-12-22 17:13:34.873 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-12-22 17:13:34.880 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-22 17:13:34.884 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "__EFMigrationsLock";
+2025-12-22 17:13:34.940 +01:00 [INF] User profile is available. Using 'C:\Users\s.salanoi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-22 17:13:34.990 +01:00 [INF] Now listening on: http://localhost:5000
+2025-12-22 17:13:34.991 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-22 17:13:34.992 +01:00 [INF] Hosting environment: Production
+2025-12-22 17:13:34.992 +01:00 [INF] Content root path: C:\Work\Course\techstack-scanner\apps\api
+2025-12-22 17:13:41.940 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 78
+2025-12-22 17:13:41.952 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-22 17:13:41.971 +01:00 [INF] Executing endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 17:13:41.980 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Api.Models.DTOs.LoginResponse] Login(Api.Models.DTOs.LoginRequest) on controller Api.Controllers.AuthController (api).
+2025-12-22 17:13:42.027 +01:00 [INF] Executing OkObjectResult, writing value of type 'Api.Models.DTOs.LoginResponse'.
+2025-12-22 17:13:42.035 +01:00 [INF] Executed action Api.Controllers.AuthController.Login (api) in 52.5304ms
+2025-12-22 17:13:42.038 +01:00 [INF] Executed endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 17:13:42.039 +01:00 [INF] HTTP POST /api/auth/login responded 200 in 86.7268 ms
+2025-12-22 17:13:42.040 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 200 null application/json; charset=utf-8 101.822ms
+2025-12-22 17:17:04.361 +01:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-22 17:17:04.420 +01:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsLock' AND "type" = 'table';
+2025-12-22 17:17:04.426 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT OR IGNORE INTO "__EFMigrationsLock"("Id", "Timestamp") VALUES(1, '2025-12-22 16:17:04.4250765+00:00');
+SELECT changes();
+2025-12-22 17:17:04.473 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2025-12-22 17:17:04.483 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-12-22 17:17:04.487 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-12-22 17:17:04.494 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-22 17:17:04.499 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "__EFMigrationsLock";
+2025-12-22 17:17:04.562 +01:00 [INF] User profile is available. Using 'C:\Users\s.salanoi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-22 17:17:04.610 +01:00 [INF] Now listening on: http://localhost:5000
+2025-12-22 17:17:04.612 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-22 17:17:04.612 +01:00 [INF] Hosting environment: Production
+2025-12-22 17:17:04.613 +01:00 [INF] Content root path: C:\Work\Course\techstack-scanner\apps\api
+2025-12-22 17:18:33.435 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:18:33.453 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-22 17:18:33.477 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:18:33.486 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:18:33.494 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:18:33.498 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:18:33.500 +01:00 [INF] HTTP GET / responded 200 in 46.9586 ms
+2025-12-22 17:18:33.506 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 71.5524ms
+2025-12-22 17:18:33.544 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-12-22 17:18:33.546 +01:00 [INF] HTTP GET /favicon.ico responded 404 in 1.1084 ms
+2025-12-22 17:18:33.546 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 404 0 null 2.5799ms
+2025-12-22 17:18:33.548 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/favicon.ico, Response status code: 404
+2025-12-22 17:18:49.511 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:18:49.520 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:18:49.521 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:18:49.523 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:18:49.524 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:18:49.524 +01:00 [INF] HTTP GET / responded 200 in 5.9734 ms
+2025-12-22 17:18:49.525 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 13.4325ms
+2025-12-22 17:21:37.234 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:21:37.235 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:21:37.235 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:21:37.235 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:21:37.236 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:21:37.236 +01:00 [INF] HTTP GET / responded 200 in 1.7503 ms
+2025-12-22 17:21:37.236 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.7526ms
+2025-12-22 17:21:38.578 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:21:38.583 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:21:38.583 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:21:38.583 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:21:38.584 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:21:38.584 +01:00 [INF] HTTP GET / responded 200 in 1.6433 ms
+2025-12-22 17:21:38.585 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 6.5737ms
+2025-12-22 17:21:39.049 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:21:39.050 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:21:39.050 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:21:39.050 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:21:39.051 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:21:39.051 +01:00 [INF] HTTP GET / responded 200 in 1.9890 ms
+2025-12-22 17:21:39.052 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 3.2123ms
+2025-12-22 17:21:39.327 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:21:39.328 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:21:39.329 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:21:39.329 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:21:39.330 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:21:39.330 +01:00 [INF] HTTP GET / responded 200 in 1.8723 ms
+2025-12-22 17:21:39.331 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 3.2111ms
+2025-12-22 17:21:39.542 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:21:39.542 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:21:39.543 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:21:39.543 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:21:39.543 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:21:39.544 +01:00 [INF] HTTP GET / responded 200 in 1.7672 ms
+2025-12-22 17:21:39.544 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.7053ms
+2025-12-22 17:21:39.793 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:21:39.799 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:21:39.799 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:21:39.800 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:21:39.801 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:21:39.801 +01:00 [INF] HTTP GET / responded 200 in 2.4906 ms
+2025-12-22 17:21:39.802 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 8.4872ms
+2025-12-22 17:21:40.313 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:21:40.313 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:21:40.314 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:21:40.314 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:21:40.314 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:21:40.315 +01:00 [INF] HTTP GET / responded 200 in 1.5261 ms
+2025-12-22 17:21:40.315 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.2712ms
+2025-12-22 17:22:40.765 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:22:40.766 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:22:40.766 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:22:40.767 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:22:40.767 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:22:40.767 +01:00 [INF] HTTP GET / responded 200 in 1.4018 ms
+2025-12-22 17:22:40.768 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.2081ms
+2025-12-22 17:22:41.343 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:22:41.347 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:22:41.347 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:22:41.348 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:22:41.348 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:22:41.348 +01:00 [INF] HTTP GET / responded 200 in 1.6035 ms
+2025-12-22 17:22:41.349 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 5.1438ms
+2025-12-22 17:22:41.568 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:22:41.568 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:22:41.569 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:22:41.569 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:22:41.569 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:22:41.570 +01:00 [INF] HTTP GET / responded 200 in 1.4453 ms
+2025-12-22 17:22:41.570 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.3962ms
+2025-12-22 17:22:41.775 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:22:41.776 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:22:41.776 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:22:41.777 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:22:41.777 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:22:41.777 +01:00 [INF] HTTP GET / responded 200 in 1.8690 ms
+2025-12-22 17:22:41.778 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.947ms
+2025-12-22 17:22:42.000 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:22:42.003 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:22:42.004 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:22:42.004 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:22:42.004 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:22:42.005 +01:00 [INF] HTTP GET / responded 200 in 1.4821 ms
+2025-12-22 17:22:42.005 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 4.8707ms
+2025-12-22 17:22:42.375 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:22:42.375 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:22:42.375 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:22:42.376 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:22:42.376 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:22:42.376 +01:00 [INF] HTTP GET / responded 200 in 1.4140 ms
+2025-12-22 17:22:42.377 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.1677ms
+2025-12-22 17:22:42.986 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:22:42.987 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:22:42.987 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:22:42.988 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:22:42.988 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:22:42.988 +01:00 [INF] HTTP GET / responded 200 in 1.5074 ms
+2025-12-22 17:22:42.988 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.3426ms
+2025-12-22 17:22:55.374 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 17:22:55.374 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 17:22:55.375 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 17:22:55.375 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 17:22:55.376 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 17:22:55.376 +01:00 [INF] HTTP GET / responded 200 in 1.4617 ms
+2025-12-22 17:22:55.376 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.1851ms
+2025-12-22 23:03:44.450 +01:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-22 23:03:44.510 +01:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsLock' AND "type" = 'table';
+2025-12-22 23:03:44.529 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT OR IGNORE INTO "__EFMigrationsLock"("Id", "Timestamp") VALUES(1, '2025-12-22 22:03:44.5207409+00:00');
+SELECT changes();
+2025-12-22 23:03:44.598 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2025-12-22 23:03:44.704 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-12-22 23:03:44.710 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-12-22 23:03:44.724 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-22 23:03:44.731 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "__EFMigrationsLock";
+2025-12-22 23:03:44.824 +01:00 [INF] User profile is available. Using 'C:\Users\s.salanoi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-22 23:03:44.882 +01:00 [INF] Now listening on: http://localhost:5000
+2025-12-22 23:03:44.885 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-22 23:03:44.886 +01:00 [INF] Hosting environment: Production
+2025-12-22 23:03:44.887 +01:00 [INF] Content root path: C:\Work\Course\techstack-scanner\apps\api
+2025-12-22 23:04:01.065 +01:00 [INF] Application is shutting down...
+2025-12-22 23:11:31.725 +01:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-22 23:11:31.778 +01:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsLock' AND "type" = 'table';
+2025-12-22 23:11:31.788 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT OR IGNORE INTO "__EFMigrationsLock"("Id", "Timestamp") VALUES(1, '2025-12-22 22:11:31.7859401+00:00');
+SELECT changes();
+2025-12-22 23:11:31.831 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2025-12-22 23:11:31.845 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-12-22 23:11:31.850 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-12-22 23:11:31.860 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-22 23:11:31.865 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "__EFMigrationsLock";
+2025-12-22 23:11:31.924 +01:00 [INF] User profile is available. Using 'C:\Users\s.salanoi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-22 23:11:31.974 +01:00 [INF] Now listening on: http://localhost:5000
+2025-12-22 23:11:31.977 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-22 23:11:31.978 +01:00 [INF] Hosting environment: Production
+2025-12-22 23:11:31.979 +01:00 [INF] Content root path: C:\Work\Course\techstack-scanner\apps\api
+2025-12-22 23:14:59.580 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/projects?skip=0&take=20 - null null
+2025-12-22 23:14:59.615 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-12-22 23:14:59.620 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:14:59.666 +01:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-12-22 23:14:59.674 +01:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-22 23:14:59.678 +01:00 [INF] HTTP GET /api/projects responded 401 in 63.1141 ms
+2025-12-22 23:14:59.695 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/projects?skip=0&take=20 - 401 0 null 116.5146ms
+2025-12-22 23:15:39.196 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/projects?skip=0&take=20 - null null
+2025-12-22 23:15:39.200 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:15:39.205 +01:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-12-22 23:15:39.206 +01:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-22 23:15:39.207 +01:00 [INF] HTTP GET /api/projects responded 401 in 7.3018 ms
+2025-12-22 23:15:39.210 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/projects?skip=0&take=20 - 401 0 null 13.6772ms
+2025-12-22 23:15:55.139 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/projects?skip=0&take=20 - null null
+2025-12-22 23:15:55.144 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:15:55.148 +01:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-12-22 23:15:55.149 +01:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-22 23:15:55.150 +01:00 [INF] HTTP GET /api/projects responded 401 in 6.3913 ms
+2025-12-22 23:15:55.152 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/projects?skip=0&take=20 - 401 0 null 13.9089ms
+2025-12-22 23:16:24.310 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - null null
+2025-12-22 23:16:24.313 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:16:24.315 +01:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.5866 ms
+2025-12-22 23:16:24.317 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - 204 null null 6.996ms
+2025-12-22 23:16:24.323 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 69
+2025-12-22 23:16:24.326 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:16:24.328 +01:00 [INF] Executing endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:16:24.344 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Api.Models.DTOs.LoginResponse] Login(Api.Models.DTOs.LoginRequest) on controller Api.Controllers.AuthController (api).
+2025-12-22 23:16:24.413 +01:00 [ERR] Admin credentials are not configured in environment variables.
+2025-12-22 23:16:24.422 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-12-22 23:16:24.428 +01:00 [INF] Executed action Api.Controllers.AuthController.Login (api) in 76.5175ms
+2025-12-22 23:16:24.431 +01:00 [INF] Executed endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:16:24.433 +01:00 [ERR] HTTP POST /api/auth/login responded 500 in 106.8422 ms
+2025-12-22 23:16:24.435 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 500 null text/plain; charset=utf-8 112.2084ms
+2025-12-22 23:16:30.696 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - null null
+2025-12-22 23:16:30.700 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:16:30.701 +01:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.0594 ms
+2025-12-22 23:16:30.707 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - 204 null null 11.3094ms
+2025-12-22 23:16:30.712 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 69
+2025-12-22 23:16:30.715 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:16:30.717 +01:00 [INF] Executing endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:16:30.719 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Api.Models.DTOs.LoginResponse] Login(Api.Models.DTOs.LoginRequest) on controller Api.Controllers.AuthController (api).
+2025-12-22 23:16:30.723 +01:00 [ERR] Admin credentials are not configured in environment variables.
+2025-12-22 23:16:30.726 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-12-22 23:16:30.731 +01:00 [INF] Executed action Api.Controllers.AuthController.Login (api) in 9.4311ms
+2025-12-22 23:16:30.733 +01:00 [INF] Executed endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:16:30.735 +01:00 [ERR] HTTP POST /api/auth/login responded 500 in 19.4722 ms
+2025-12-22 23:16:30.739 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 500 null text/plain; charset=utf-8 27.0843ms
+2025-12-22 23:17:50.272 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - null null
+2025-12-22 23:17:50.276 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:17:50.277 +01:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.1171 ms
+2025-12-22 23:17:50.280 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - 204 null null 7.6812ms
+2025-12-22 23:17:50.285 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 59
+2025-12-22 23:17:50.289 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:17:50.290 +01:00 [INF] Executing endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:17:50.293 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Api.Models.DTOs.LoginResponse] Login(Api.Models.DTOs.LoginRequest) on controller Api.Controllers.AuthController (api).
+2025-12-22 23:17:50.296 +01:00 [ERR] Admin credentials are not configured in environment variables.
+2025-12-22 23:17:50.297 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-12-22 23:17:50.299 +01:00 [INF] Executed action Api.Controllers.AuthController.Login (api) in 3.1172ms
+2025-12-22 23:17:50.301 +01:00 [INF] Executed endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:17:50.302 +01:00 [ERR] HTTP POST /api/auth/login responded 500 in 13.7217 ms
+2025-12-22 23:17:50.304 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 500 null text/plain; charset=utf-8 19.6221ms
+2025-12-22 23:17:51.082 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 59
+2025-12-22 23:17:51.086 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:17:51.087 +01:00 [INF] Executing endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:17:51.088 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Api.Models.DTOs.LoginResponse] Login(Api.Models.DTOs.LoginRequest) on controller Api.Controllers.AuthController (api).
+2025-12-22 23:17:51.091 +01:00 [ERR] Admin credentials are not configured in environment variables.
+2025-12-22 23:17:51.094 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-12-22 23:17:51.095 +01:00 [INF] Executed action Api.Controllers.AuthController.Login (api) in 5.1838ms
+2025-12-22 23:17:51.097 +01:00 [INF] Executed endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:17:51.098 +01:00 [ERR] HTTP POST /api/auth/login responded 500 in 11.9038 ms
+2025-12-22 23:17:51.099 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 500 null text/plain; charset=utf-8 16.8313ms
+2025-12-22 23:17:51.509 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 59
+2025-12-22 23:17:51.514 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:17:51.516 +01:00 [INF] Executing endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:17:51.517 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Api.Models.DTOs.LoginResponse] Login(Api.Models.DTOs.LoginRequest) on controller Api.Controllers.AuthController (api).
+2025-12-22 23:17:51.521 +01:00 [ERR] Admin credentials are not configured in environment variables.
+2025-12-22 23:17:51.523 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-12-22 23:17:51.525 +01:00 [INF] Executed action Api.Controllers.AuthController.Login (api) in 4.5272ms
+2025-12-22 23:17:51.529 +01:00 [INF] Executed endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:17:51.530 +01:00 [ERR] HTTP POST /api/auth/login responded 500 in 15.5281 ms
+2025-12-22 23:17:51.532 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 500 null text/plain; charset=utf-8 22.563ms
+2025-12-22 23:17:51.705 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 59
+2025-12-22 23:17:51.713 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:17:51.715 +01:00 [INF] Executing endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:17:51.717 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Api.Models.DTOs.LoginResponse] Login(Api.Models.DTOs.LoginRequest) on controller Api.Controllers.AuthController (api).
+2025-12-22 23:17:51.719 +01:00 [ERR] Admin credentials are not configured in environment variables.
+2025-12-22 23:17:51.720 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-12-22 23:17:51.721 +01:00 [INF] Executed action Api.Controllers.AuthController.Login (api) in 2.3095ms
+2025-12-22 23:17:51.723 +01:00 [INF] Executed endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:17:51.724 +01:00 [ERR] HTTP POST /api/auth/login responded 500 in 11.3944 ms
+2025-12-22 23:17:51.727 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 500 null text/plain; charset=utf-8 22.5201ms
+2025-12-22 23:18:03.840 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - null null
+2025-12-22 23:18:03.843 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:18:03.844 +01:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.7801 ms
+2025-12-22 23:18:03.846 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - 204 null null 5.8407ms
+2025-12-22 23:18:03.850 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 59
+2025-12-22 23:18:03.854 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:18:03.855 +01:00 [INF] Executing endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:18:03.856 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Api.Models.DTOs.LoginResponse] Login(Api.Models.DTOs.LoginRequest) on controller Api.Controllers.AuthController (api).
+2025-12-22 23:18:03.858 +01:00 [ERR] Admin credentials are not configured in environment variables.
+2025-12-22 23:18:03.858 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-12-22 23:18:03.860 +01:00 [INF] Executed action Api.Controllers.AuthController.Login (api) in 2.2509ms
+2025-12-22 23:18:03.862 +01:00 [INF] Executed endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:18:03.863 +01:00 [ERR] HTTP POST /api/auth/login responded 500 in 8.7246 ms
+2025-12-22 23:18:03.864 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 500 null text/plain; charset=utf-8 14.0415ms
+2025-12-22 23:20:29.959 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-12-22 23:20:29.963 +01:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-22 23:20:29.970 +01:00 [INF] Setting HTTP status code 200.
+2025-12-22 23:20:29.975 +01:00 [INF] Writing value of type 'String' as Json.
+2025-12-22 23:20:29.980 +01:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-22 23:20:29.982 +01:00 [INF] HTTP GET / responded 200 in 18.5530 ms
+2025-12-22 23:20:29.984 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 24.9582ms
+2025-12-22 23:20:30.040 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-12-22 23:20:30.046 +01:00 [INF] HTTP GET /favicon.ico responded 404 in 0.2316 ms
+2025-12-22 23:20:30.048 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 404 0 null 7.6483ms
+2025-12-22 23:20:30.051 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/favicon.ico, Response status code: 404
+2025-12-22 23:24:42.808 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - null null
+2025-12-22 23:24:42.812 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:24:42.813 +01:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 1.1924 ms
+2025-12-22 23:24:42.816 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - 204 null null 7.4863ms
+2025-12-22 23:24:42.819 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 59
+2025-12-22 23:24:42.822 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:24:42.822 +01:00 [INF] Executing endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:24:42.823 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Api.Models.DTOs.LoginResponse] Login(Api.Models.DTOs.LoginRequest) on controller Api.Controllers.AuthController (api).
+2025-12-22 23:24:42.825 +01:00 [ERR] Admin credentials are not configured in environment variables.
+2025-12-22 23:24:42.826 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-12-22 23:24:42.827 +01:00 [INF] Executed action Api.Controllers.AuthController.Login (api) in 2.6428ms
+2025-12-22 23:24:42.833 +01:00 [INF] Executed endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:24:42.833 +01:00 [ERR] HTTP POST /api/auth/login responded 500 in 11.4299 ms
+2025-12-22 23:24:42.835 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 500 null text/plain; charset=utf-8 16.0679ms
+2025-12-22 23:24:44.336 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 59
+2025-12-22 23:24:44.339 +01:00 [INF] CORS policy execution successful.
+2025-12-22 23:24:44.341 +01:00 [INF] Executing endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:24:44.343 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Api.Models.DTOs.LoginResponse] Login(Api.Models.DTOs.LoginRequest) on controller Api.Controllers.AuthController (api).
+2025-12-22 23:24:44.346 +01:00 [ERR] Admin credentials are not configured in environment variables.
+2025-12-22 23:24:44.346 +01:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-12-22 23:24:44.347 +01:00 [INF] Executed action Api.Controllers.AuthController.Login (api) in 1.7466ms
+2025-12-22 23:24:44.349 +01:00 [INF] Executed endpoint 'Api.Controllers.AuthController.Login (api)'
+2025-12-22 23:24:44.349 +01:00 [ERR] HTTP POST /api/auth/login responded 500 in 10.6980 ms
+2025-12-22 23:24:44.351 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 500 null text/plain; charset=utf-8 14.9801ms
+2025-12-22 23:25:09.198 +01:00 [INF] Application is shutting down...

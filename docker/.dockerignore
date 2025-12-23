@@ -1,0 +1,62 @@
+# .NET build artifacts
+**/bin/
+**/obj/
+**/out/
+
+# Node modules
+**/node_modules/
+**/dist/
+**/.pnpm-store/
+
+# IDE and editor files
+**/.vs/
+**/.vscode/
+**/.idea/
+**/*.swp
+**/*.swo
+**/*~
+
+# OS files
+**/.DS_Store
+**/Thumbs.db
+
+# Logs
+**/Logs/
+**/*.log
+
+# Database files
+**/App_Data/*.db
+**/App_Data/*.db-shm
+**/App_Data/*.db-wal
+
+# Environment files
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Test files
+**/Tests/
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# Git
+**/.git/
+**/.gitignore
+**/.gitattributes
+
+# Docker
+**/.dockerignore
+**/Dockerfile*
+**/docker-compose*.yml
+
+# Documentation
+**/README.md
+**/PROMPTS_LOG.md
+**/*.md
+
+# Config files (keep only necessary ones)
+**/.editorconfig
+**/.prettierrc
+**/.eslintrc*

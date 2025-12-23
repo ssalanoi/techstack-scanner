@@ -1,0 +1,149 @@
+[17:17:04 INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[17:17:04 INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsLock' AND "type" = 'table';
+[17:17:04 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT OR IGNORE INTO "__EFMigrationsLock"("Id", "Timestamp") VALUES(1, '2025-12-22 16:17:04.4250765+00:00');
+SELECT changes();
+[17:17:04 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+[17:17:04 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+[17:17:04 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+[17:17:04 INF] No migrations were applied. The database is already up to date.
+[17:17:04 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DELETE FROM "__EFMigrationsLock";
+[17:17:04 INF] User profile is available. Using 'C:\Users\s.salanoi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[17:17:04 INF] Now listening on: http://localhost:5000
+[17:17:04 INF] Application started. Press Ctrl+C to shut down.
+[17:17:04 INF] Hosting environment: Production
+[17:17:04 INF] Content root path: C:\Work\Course\techstack-scanner\apps\api
+[17:18:33 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:18:33 WRN] Failed to determine the https port for redirect.
+[17:18:33 INF] Executing endpoint 'HTTP: GET /'
+[17:18:33 INF] Setting HTTP status code 200.
+[17:18:33 INF] Writing value of type 'String' as Json.
+[17:18:33 INF] Executed endpoint 'HTTP: GET /'
+[17:18:33 INF] HTTP GET / responded 200 in 46.9586 ms
+[17:18:33 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 71.5524ms
+[17:18:33 INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+[17:18:33 INF] HTTP GET /favicon.ico responded 404 in 1.1084 ms
+[17:18:33 INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 404 0 null 2.5799ms
+[17:18:33 INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/favicon.ico, Response status code: 404
+[17:18:49 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:18:49 INF] Executing endpoint 'HTTP: GET /'
+[17:18:49 INF] Setting HTTP status code 200.
+[17:18:49 INF] Writing value of type 'String' as Json.
+[17:18:49 INF] Executed endpoint 'HTTP: GET /'
+[17:18:49 INF] HTTP GET / responded 200 in 5.9734 ms
+[17:18:49 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 13.4325ms
+[17:21:37 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:21:37 INF] Executing endpoint 'HTTP: GET /'
+[17:21:37 INF] Setting HTTP status code 200.
+[17:21:37 INF] Writing value of type 'String' as Json.
+[17:21:37 INF] Executed endpoint 'HTTP: GET /'
+[17:21:37 INF] HTTP GET / responded 200 in 1.7503 ms
+[17:21:37 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.7526ms
+[17:21:38 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:21:38 INF] Executing endpoint 'HTTP: GET /'
+[17:21:38 INF] Setting HTTP status code 200.
+[17:21:38 INF] Writing value of type 'String' as Json.
+[17:21:38 INF] Executed endpoint 'HTTP: GET /'
+[17:21:38 INF] HTTP GET / responded 200 in 1.6433 ms
+[17:21:38 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 6.5737ms
+[17:21:39 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:21:39 INF] Executing endpoint 'HTTP: GET /'
+[17:21:39 INF] Setting HTTP status code 200.
+[17:21:39 INF] Writing value of type 'String' as Json.
+[17:21:39 INF] Executed endpoint 'HTTP: GET /'
+[17:21:39 INF] HTTP GET / responded 200 in 1.9890 ms
+[17:21:39 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 3.2123ms
+[17:21:39 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:21:39 INF] Executing endpoint 'HTTP: GET /'
+[17:21:39 INF] Setting HTTP status code 200.
+[17:21:39 INF] Writing value of type 'String' as Json.
+[17:21:39 INF] Executed endpoint 'HTTP: GET /'
+[17:21:39 INF] HTTP GET / responded 200 in 1.8723 ms
+[17:21:39 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 3.2111ms
+[17:21:39 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:21:39 INF] Executing endpoint 'HTTP: GET /'
+[17:21:39 INF] Setting HTTP status code 200.
+[17:21:39 INF] Writing value of type 'String' as Json.
+[17:21:39 INF] Executed endpoint 'HTTP: GET /'
+[17:21:39 INF] HTTP GET / responded 200 in 1.7672 ms
+[17:21:39 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.7053ms
+[17:21:39 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:21:39 INF] Executing endpoint 'HTTP: GET /'
+[17:21:39 INF] Setting HTTP status code 200.
+[17:21:39 INF] Writing value of type 'String' as Json.
+[17:21:39 INF] Executed endpoint 'HTTP: GET /'
+[17:21:39 INF] HTTP GET / responded 200 in 2.4906 ms
+[17:21:39 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 8.4872ms
+[17:21:40 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:21:40 INF] Executing endpoint 'HTTP: GET /'
+[17:21:40 INF] Setting HTTP status code 200.
+[17:21:40 INF] Writing value of type 'String' as Json.
+[17:21:40 INF] Executed endpoint 'HTTP: GET /'
+[17:21:40 INF] HTTP GET / responded 200 in 1.5261 ms
+[17:21:40 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.2712ms
+[17:22:40 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:22:40 INF] Executing endpoint 'HTTP: GET /'
+[17:22:40 INF] Setting HTTP status code 200.
+[17:22:40 INF] Writing value of type 'String' as Json.
+[17:22:40 INF] Executed endpoint 'HTTP: GET /'
+[17:22:40 INF] HTTP GET / responded 200 in 1.4018 ms
+[17:22:40 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.2081ms
+[17:22:41 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:22:41 INF] Executing endpoint 'HTTP: GET /'
+[17:22:41 INF] Setting HTTP status code 200.
+[17:22:41 INF] Writing value of type 'String' as Json.
+[17:22:41 INF] Executed endpoint 'HTTP: GET /'
+[17:22:41 INF] HTTP GET / responded 200 in 1.6035 ms
+[17:22:41 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 5.1438ms
+[17:22:41 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:22:41 INF] Executing endpoint 'HTTP: GET /'
+[17:22:41 INF] Setting HTTP status code 200.
+[17:22:41 INF] Writing value of type 'String' as Json.
+[17:22:41 INF] Executed endpoint 'HTTP: GET /'
+[17:22:41 INF] HTTP GET / responded 200 in 1.4453 ms
+[17:22:41 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.3962ms
+[17:22:41 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:22:41 INF] Executing endpoint 'HTTP: GET /'
+[17:22:41 INF] Setting HTTP status code 200.
+[17:22:41 INF] Writing value of type 'String' as Json.
+[17:22:41 INF] Executed endpoint 'HTTP: GET /'
+[17:22:41 INF] HTTP GET / responded 200 in 1.8690 ms
+[17:22:41 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.947ms
+[17:22:42 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:22:42 INF] Executing endpoint 'HTTP: GET /'
+[17:22:42 INF] Setting HTTP status code 200.
+[17:22:42 INF] Writing value of type 'String' as Json.
+[17:22:42 INF] Executed endpoint 'HTTP: GET /'
+[17:22:42 INF] HTTP GET / responded 200 in 1.4821 ms
+[17:22:42 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 4.8707ms
+[17:22:42 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:22:42 INF] Executing endpoint 'HTTP: GET /'
+[17:22:42 INF] Setting HTTP status code 200.
+[17:22:42 INF] Writing value of type 'String' as Json.
+[17:22:42 INF] Executed endpoint 'HTTP: GET /'
+[17:22:42 INF] HTTP GET / responded 200 in 1.4140 ms
+[17:22:42 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.1677ms
+[17:22:42 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:22:42 INF] Executing endpoint 'HTTP: GET /'
+[17:22:42 INF] Setting HTTP status code 200.
+[17:22:42 INF] Writing value of type 'String' as Json.
+[17:22:42 INF] Executed endpoint 'HTTP: GET /'
+[17:22:42 INF] HTTP GET / responded 200 in 1.5074 ms
+[17:22:42 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.3426ms
+[17:22:55 INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[17:22:55 INF] Executing endpoint 'HTTP: GET /'
+[17:22:55 INF] Setting HTTP status code 200.
+[17:22:55 INF] Writing value of type 'String' as Json.
+[17:22:55 INF] Executed endpoint 'HTTP: GET /'
+[17:22:55 INF] HTTP GET / responded 200 in 1.4617 ms
+[17:22:55 INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 2.1851ms

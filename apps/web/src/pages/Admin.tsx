@@ -17,9 +17,8 @@ import { notifications } from '@mantine/notifications';
 
 export default function Admin() {
   const [scanSettings, setScanSettings] = useState({
-    maxDepth: 3,
-    concurrentScans: 2,
-    filePatterns: '**/*.ts\n**/*.tsx\n**/*.csproj\npackage.json',
+    maxDepth: 5,
+    filePatterns: '**/*.ts\n**/*.tsx\n**/*.cs\n**/*.csproj\npackage.json',
   });
 
   const [llmSettings, setLlmSettings] = useState({
@@ -58,9 +57,8 @@ export default function Admin() {
       });
       if (confirmAction === 'resetSettings') {
         setScanSettings({
-          maxDepth: 3,
-          concurrentScans: 2,
-          filePatterns: '**/*.ts\n**/*.tsx\n**/*.csproj\npackage.json',
+          maxDepth: 5,
+          filePatterns: '**/*.ts\n**/*.tsx\n**/*.cs\n**/*.csproj\npackage.json',
         });
         setLlmSettings({ host: 'http://localhost:11434', model: 'llama3.2', timeoutSeconds: 60 });
       }
@@ -118,13 +116,6 @@ export default function Admin() {
                 min={1}
                 value={scanSettings.maxDepth}
                 onChange={(value) => setScanSettings((s) => ({ ...s, maxDepth: Number(value) || 1 }))}
-              />
-              <NumberInput
-                label="Concurrent scans"
-                min={1}
-                max={10}
-                value={scanSettings.concurrentScans}
-                onChange={(value) => setScanSettings((s) => ({ ...s, concurrentScans: Number(value) || 1 }))}
               />
               <Textarea
                 label="File patterns (one per line)"

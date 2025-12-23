@@ -13,3 +13,10 @@ obj/
 apps/api/App_Data/scan.db
 apps/api/App_Data/scan.db-shm
 apps/api/App_Data/scan.db-wal
+
+# Log files
+*.log
+*.err
+*.txt
+apps/api/Logs/
+apps/api/App_Data/runtime-settings.json

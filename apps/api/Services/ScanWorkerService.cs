@@ -50,6 +50,7 @@ public class ScanWorkerService : BackgroundService
         var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
         var scanService = scope.ServiceProvider.GetRequiredService<ScanService>();
         var llmService = scope.ServiceProvider.GetRequiredService<LlmService>();
+        var outdatedService = scope.ServiceProvider.GetRequiredService<OutdatedDependencyService>();
 
         var scan = await db.Scans.Include(s => s.Project).Include(s => s.TechnologyFindings)
             .FirstOrDefaultAsync(s => s.Id == request.ScanId, cancellationToken);
@@ -76,6 +77,19 @@ public class ScanWorkerService : BackgroundService
             var findings = await scanService.ScanAsync(request.Path, scan.Id, cancellationToken);
             await db.TechnologyFindings.AddRangeAsync(findings, cancellationToken);
             await db.SaveChangesAsync(cancellationToken);
+
+            // Check for outdated dependencies
+            try
+            {
+                _logger.LogInformation("Checking outdated dependencies for scan {ScanId}", scan.Id);
+                await outdatedService.CheckAndUpdateOutdatedAsync(findings, cancellationToken);
+                await db.SaveChangesAsync(cancellationToken);
+                _logger.LogInformation("Completed outdated check for scan {ScanId}", scan.Id);
+            }
+            catch (Exception outdatedEx)
+            {
+                _logger.LogWarning(outdatedEx, "Failed to check outdated dependencies for scan {ScanId}, continuing without outdated info", scan.Id);
+            }
 
             if (scan.Project != null)
             {

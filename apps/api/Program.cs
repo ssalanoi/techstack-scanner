@@ -42,6 +42,8 @@ builder.Services.Configure<QueueOptions>(builder.Configuration.GetSection("Queue
 builder.Services.Configure<LlmOptions>(builder.Configuration.GetSection(LlmOptions.SectionName));
 builder.Services.AddSingleton<ScanService>();
 builder.Services.AddSingleton<QueueService>();
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<OutdatedDependencyService>();
 builder.Services.AddHttpClient<LlmService>((sp, client) =>
 {
     var options = sp.GetRequiredService<IOptions<LlmOptions>>().Value;

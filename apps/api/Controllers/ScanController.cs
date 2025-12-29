@@ -17,11 +17,13 @@ public class ScanController : ControllerBase
 {
     private readonly AppDbContext _db;
     private readonly QueueService _queue;
+    private readonly OutdatedDependencyService _outdatedService;
 
-    public ScanController(AppDbContext db, QueueService queue)
+    public ScanController(AppDbContext db, QueueService queue, OutdatedDependencyService outdatedService)
     {
         _db = db;
         _queue = queue;
+        _outdatedService = outdatedService;
     }
 
     [HttpPost]
@@ -109,5 +111,24 @@ public class ScanController : ControllerBase
         };
 
         return Ok(response);
+    }
+
+    [HttpPost("{scanId:guid}/check-outdated")]
+    public async Task<IActionResult> CheckOutdated([FromRoute] Guid scanId, CancellationToken cancellationToken)
+    {
+        var findings = await _db.TechnologyFindings
+            .Where(tf => tf.ScanId == scanId)
+            .ToListAsync(cancellationToken);
+
+        if (findings.Count == 0)
+        {
+            return NotFound("No findings for this scan.");
+        }
+
+        await _outdatedService.CheckAndUpdateOutdatedAsync(findings, cancellationToken);
+        await _db.SaveChangesAsync(cancellationToken);
+
+        var outdatedCount = findings.Count(f => f.IsOutdated);
+        return Ok(new { message = $"Checked {findings.Count} dependencies, {outdatedCount} are outdated." });
     }
 }

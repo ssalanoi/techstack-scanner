@@ -78,13 +78,11 @@
 - [x] **Pages** - Dashboard, Projects, ProjectDetails, Login, Admin
 
 ### Docker
-- [x] **Dockerfile.api** - Multi-stage build configured
-- [x] **Dockerfile.web** - Multi-stage build with nginx
-- [x] **docker-compose.yml** - 3 services (ollama, api, web)
-- [x] **.dockerignore** - Optimized for all services
-- [x] **.env.example** - Template created
-- [x] **nginx.conf** - SPA routing configured
-- [x] **DOCKER.md** - Comprehensive guide
+- [x] **docker-compose.yml** - Ollama service only
+- [x] **.dockerignore** - Present
+- [x] **init-ollama.sh** - Script for model initialization
+- [x] **DOCKER.md** - Comprehensive guide for Ollama
+- [x] **START.md** - Quick start guide with Docker Ollama
 
 ---
 
@@ -262,28 +260,35 @@ $env:ADMIN_PASSWORD='CustomPassword123!'
 dotnet run --urls http://localhost:5000
 ```
 
-### To Run with Docker
+### To Run with Docker (Ollama only)
 ```powershell
-# Create .env file
-Copy-Item .env.example .env
-# Edit .env with secure values
-
-# Start all services
+# Start Ollama container
 cd docker
-docker compose up --build -d
+docker compose up -d
 
-# Initialize Ollama model
+# Pull llama3.2 model
 docker compose exec ollama ollama pull llama3.2
 
-# View logs
-docker compose logs -f
+# Verify Ollama is running
+curl http://localhost:11434/api/tags
+```
+
+**Then run API and Web locally:**
+```powershell
+# Terminal 1 - API
+cd apps/api
+dotnet run --urls http://localhost:5000
+
+# Terminal 2 - Web
+cd apps/web
+pnpm dev
 ```
 
 ### Access Points
-- **Web UI:** http://localhost:5173 (dev) or http://localhost:3000 (docker)
-- **API:** http://localhost:5000
+- **Web UI:** http://localhost:5173 (local dev with Vite)
+- **API:** http://localhost:5000 (local dev)
 - **API Swagger:** http://localhost:5000/swagger (development mode)
-- **Ollama:** http://localhost:11434
+- **Ollama:** http://localhost:11434 (Docker container)
 
 ---
 

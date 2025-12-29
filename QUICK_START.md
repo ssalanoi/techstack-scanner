@@ -49,17 +49,35 @@ git config --global user.email "your@email.com"
 
 ## 📦 Optional: Ollama for AI Insights
 
-Verify Ollama (usually runs automatically on Windows):
+### Option 1: Local Ollama
+Verify Ollama is running (usually starts automatically on Windows):
 ```powershell
 curl http://localhost:11434/api/tags
 ```
 
-If not running: `ollama serve`
+If not running:
+```powershell
+ollama serve
+```
 
 Pull the model:
 ```powershell
 ollama pull llama3.2
 ```
+
+### Option 2: Ollama in Docker (recommended)
+```powershell
+# Start Ollama container
+cd docker
+docker compose up -d
+
+# Pull llama3.2 model (first time only)
+docker compose exec ollama ollama pull llama3.2
+```
+
+After this, API will automatically connect to Ollama at http://localhost:11434
+
+See [DOCKER.md](DOCKER.md) for more details
 
 ---
 
@@ -109,21 +127,6 @@ dotnet user-secrets set "ADMIN_PASSWORD" "YourPassword123!"
 Automatically checked during scans. Results show:
 - `IsOutdated` flag on findings
 - Latest version when available
-
----
-
-## 🐳 Docker Quick Start
-
-```powershell
-Copy-Item .env.example .env
-# Edit .env
-
-cd docker
-docker compose up -d
-docker compose exec ollama ollama pull llama3.2
-```
-
-Access: http://localhost:3000
 
 ---
 

@@ -21,10 +21,27 @@ builder.Host.UseSerilog((context, services, configuration) =>
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Use development defaults if environment variables are not set
+var isDevelopment = builder.Environment.IsDevelopment();
 var jwtSecret = builder.Configuration["JWT_SECRET"];
-if (string.IsNullOrWhiteSpace(jwtSecret) || jwtSecret.Length < 32)
+
+if (string.IsNullOrWhiteSpace(jwtSecret))
 {
-    throw new InvalidOperationException("JWT_SECRET must be provided and at least 32 characters long.");
+    if (isDevelopment)
+    {
+        jwtSecret = "development-secret-key-32-chars-min-for-jwt-token-signing";
+        builder.Logging.AddConsole().AddFilter("Microsoft", LogLevel.Warning);
+        Console.WriteLine("⚠️  Using default JWT_SECRET for development. Set JWT_SECRET env var for production.");
+    }
+    else
+    {
+        throw new InvalidOperationException("JWT_SECRET must be provided in production environments.");
+    }
+}
+
+if (jwtSecret.Length < 32)
+{
+    throw new InvalidOperationException("JWT_SECRET must be at least 32 characters long.");
 }
 
 var jwtSettings = new JwtSettings
@@ -121,6 +138,22 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    
+    // Display default credentials info
+    var adminEmail = Environment.GetEnvironmentVariable("ADMIN_EMAIL") 
+                     ?? app.Configuration["Auth:AdminEmail"];
+    var adminPassword = Environment.GetEnvironmentVariable("ADMIN_PASSWORD") 
+                        ?? app.Configuration["Auth:AdminPassword"];
+    
+    if (!string.IsNullOrWhiteSpace(adminEmail) && !string.IsNullOrWhiteSpace(adminPassword))
+    {
+        Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+        Console.WriteLine("🔐 DEVELOPMENT MODE - Default Credentials Loaded");
+        Console.WriteLine($"   Email: {adminEmail}");
+        Console.WriteLine($"   Password: {adminPassword}");
+        Console.WriteLine("   ⚠️  Change these in production!");
+        Console.WriteLine("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    }
 }
 
 app.UseSerilogRequestLogging();

@@ -123,12 +123,14 @@
 ## 🔧 Configuration Status
 
 ### Environment Variables
-- [x] `JWT_SECRET` - Set for development
-- [x] `ADMIN_EMAIL` - Default: admin@techstack.local
-- [x] `ADMIN_PASSWORD` - Needs to be configured
+- [x] `JWT_SECRET` - Has default for development
+- [x] `ADMIN_EMAIL` - Default: admin@techstack.local (from appsettings.Development.json)
+- [x] `ADMIN_PASSWORD` - Default: ChangeMe123! (from appsettings.Development.json)
 - [x] `OLLAMA_HOST` - Default: http://localhost:11434
 - [x] `OLLAMA_MODEL` - Default: llama3.2
 - [x] `VITE_API_URL` - Default: http://localhost:5000
+
+**Note:** All credentials have development defaults and can be overridden via environment variables.
 
 ### Database
 - [x] **Connection String:** `Data Source=App_Data/scan.db`
@@ -164,8 +166,8 @@
 ### Immediate Actions
 1. ✅ **API Running** - Backend is operational
 2. ✅ **Web Running** - Frontend is accessible
-3. ⚠️ **Ollama** - Not tested (would need to be started separately)
-4. ⚠️ **Admin Credentials** - Need to be configured for full authentication testing
+3. ✅ **Default Credentials** - Configured for development (admin@techstack.local / ChangeMe123!)
+4. ⚠️ **Ollama** - Not tested (would need to be started separately)
 
 ### For Complete E2E Testing
 To fully test the application end-to-end, you need:
@@ -184,12 +186,21 @@ To fully test the application end-to-end, you need:
    - Windows: Run `ollama serve` in a new terminal
    - Or start from Start Menu → Ollama
 
-2. **Configure Admin Credentials**:
+2. **Configure Admin Credentials** (Optional - defaults already set):
    ```powershell
-   # In apps/api directory
-   dotnet user-secrets set "ADMIN_EMAIL" "admin@techstack.local"
+   # Override defaults if needed
+   $env:ADMIN_EMAIL = "your-email@example.com"
+   $env:ADMIN_PASSWORD = "YourSecurePassword123!"
+   
+   # Or use dotnet user-secrets for persistence
+   cd apps/api
+   dotnet user-secrets set "ADMIN_EMAIL" "your-email@example.com"
    dotnet user-secrets set "ADMIN_PASSWORD" "YourSecurePassword123!"
    ```
+   
+   **Default Development Credentials:**
+   - Email: `admin@techstack.local`
+   - Password: `ChangeMe123!`
 
 3. **Test Authentication Flow**:
    - Navigate to http://localhost:5173/login
@@ -221,10 +232,10 @@ To fully test the application end-to-end, you need:
 
 ### To Run Locally
 ```powershell
-# Terminal 1 - API
+# Terminal 1 - API (No environment variables needed for development!)
 cd apps/api
-$env:JWT_SECRET='your-super-secure-jwt-secret-key-minimum-32-characters-required-here'
 dotnet run --urls http://localhost:5000
+# Default credentials will be displayed in console
 
 # Terminal 2 - Web
 cd apps/web
@@ -236,6 +247,19 @@ curl http://localhost:11434/api/tags
 
 # Pull model if needed
 ollama pull llama3.2
+```
+
+**Development Credentials (automatically loaded):**
+- Email: `admin@techstack.local`
+- Password: `ChangeMe123!`
+- JWT Secret: Auto-generated 32+ character key
+
+To override, set environment variables before running:
+```powershell
+$env:JWT_SECRET='your-secure-jwt-secret-32-chars-minimum'
+$env:ADMIN_EMAIL='custom@example.com'
+$env:ADMIN_PASSWORD='CustomPassword123!'
+dotnet run --urls http://localhost:5000
 ```
 
 ### To Run with Docker
@@ -283,6 +307,29 @@ The TechStack Scanner application has been successfully:
 ---
 
 ## 🆕 Recent Updates (December 29, 2025)
+
+### Development Environment Simplification ⭐ NEW
+Streamlined the development setup to eliminate manual environment variable configuration:
+
+**Features:**
+- ✅ Auto-generated JWT secret for development (32+ characters)
+- ✅ Default admin credentials in `appsettings.Development.json`
+- ✅ Startup console displays active credentials
+- ✅ Environment variables override defaults when set
+- ✅ Production mode still requires explicit configuration
+
+**Development Defaults:**
+- **Email:** `admin@techstack.local`
+- **Password:** `ChangeMe123!`
+- **JWT Secret:** Auto-generated (development only)
+
+**Quick Start (no env vars needed):**
+```powershell
+cd apps/api
+dotnet run --urls http://localhost:5000
+```
+
+The API will display the active credentials in the console on startup.
 
 ### Outdated Dependencies Feature
 A comprehensive outdated dependency detection system has been implemented:

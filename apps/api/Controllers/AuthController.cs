@@ -13,11 +13,13 @@ public class AuthController : ControllerBase
 {
     private readonly JwtService _jwtService;
     private readonly ILogger<AuthController> _logger;
+    private readonly IConfiguration _configuration;
 
-    public AuthController(JwtService jwtService, ILogger<AuthController> logger)
+    public AuthController(JwtService jwtService, ILogger<AuthController> logger, IConfiguration configuration)
     {
         _jwtService = jwtService;
         _logger = logger;
+        _configuration = configuration;
     }
 
     [AllowAnonymous]
@@ -29,12 +31,17 @@ public class AuthController : ControllerBase
             return ValidationProblem(ModelState);
         }
 
-        var adminEmail = Environment.GetEnvironmentVariable("ADMIN_EMAIL") ?? string.Empty;
-        var adminPassword = Environment.GetEnvironmentVariable("ADMIN_PASSWORD") ?? string.Empty;
+        // Try environment variables first, then fall back to configuration (appsettings.Development.json)
+        var adminEmail = Environment.GetEnvironmentVariable("ADMIN_EMAIL") 
+                         ?? _configuration["Auth:AdminEmail"] 
+                         ?? string.Empty;
+        var adminPassword = Environment.GetEnvironmentVariable("ADMIN_PASSWORD") 
+                            ?? _configuration["Auth:AdminPassword"] 
+                            ?? string.Empty;
 
         if (string.IsNullOrWhiteSpace(adminEmail) || string.IsNullOrWhiteSpace(adminPassword))
         {
-            _logger.LogError("Admin credentials are not configured in environment variables.");
+            _logger.LogError("Admin credentials are not configured in environment variables or configuration.");
             return StatusCode(StatusCodes.Status500InternalServerError, "Admin credentials are not configured.");
         }
 

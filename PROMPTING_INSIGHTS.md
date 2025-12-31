@@ -4,87 +4,6 @@ Observations from using AI assistants during TechStack Scanner development.
 
 ---
 
-## 🎯 Primary Prompting Techniques Used
-
-Throughout the development of TechStack Scanner, three main prompting approaches were employed:
-
-### 1. Zero-Shot Prompting
-**Definition:** Providing a task to the AI without any prior examples, relying solely on detailed instructions.
-
-**When Used:**
-- Initial project scaffolding and setup
-- Creating new components or services from scratch
-- Generating configuration files
-- Implementing well-established patterns (JWT auth, CORS setup)
-
-**Example:**
-```
-Create a C# service that:
-- Accepts a folder path
-- Scans for: package.json, *.csproj, requirements.txt, Gemfile
-- Extracts framework names and versions
-- Returns structured data
-```
-
-**Why It Worked:** Clear, comprehensive instructions with specific requirements allowed AI to generate correct implementations without needing examples.
-
----
-
-### 2. Few-Shot Prompting
-**Definition:** Providing one or more examples to guide the AI's output format and style.
-
-**When Used:**
-- Adding similar parsers for different package managers
-- Extending existing functionality with new formats
-- Creating components with consistent patterns
-- Writing tests following established structure
-
-**Example:**
-```
-Add Ruby detection (Gemfile) to ScanService following the same pattern 
-as npm detection in apps/api/Services/ScanService.cs lines 45-60.
-```
-
-**Why It Worked:** Referencing existing implementations ensured consistency across codebase and reduced need for detailed specifications.
-
----
-
-### 3. Interactive Prompting
-**Definition:** Iterative dialogue where each prompt builds on previous responses, with verification at each step.
-
-**When Used:**
-- Debugging complex issues
-- Refining implementations based on test results
-- Multi-step feature development
-- Configuration troubleshooting
-
-**Example Workflow:**
-```
-1. "Implement scan queue service"
-   → AI provides implementation
-2. "Test fails with NullReferenceException at line 45"
-   → AI provides fix
-3. "Works but scan status not updating in UI"
-   → AI identifies missing SignalR setup
-4. "SignalR added, verify the flow"
-   → AI confirms implementation
-```
-
-**Why It Worked:** 
-- Allowed course correction without starting over
-- Leveraged AI's ability to maintain context across conversation
-- Enabled incremental refinement with validation at each step
-- Reduced risk of large-scale refactoring
-
----
-
-### Technique Distribution
-- **Zero-Shot:** ~40% of prompts (new features, initial implementations)
-- **Few-Shot:** ~35% of prompts (pattern replication, extensions)
-- **Interactive:** ~25% of prompts (debugging, refinements, troubleshooting)
-
----
-
 ## 📊 What Worked Well
 
 ### 1. Structured Initial Prompts
@@ -224,32 +143,83 @@ d) Implementation (full code)
 
 ---
 
-## 🎯 Best Prompting Patterns
+## 🎯 Primary Prompting Techniques Used
 
-### Pattern 1: Architecture → Implementation → Tests
-**Workflow:**
-1. First prompt: "Propose architecture for [feature]"
-2. Review and approve
-3. Second prompt: "Implement [component] following approved architecture"
-4. Third prompt: "Add tests for [component] covering [scenarios]"
+Throughout the development of TechStack Scanner, three main prompting approaches were employed:
 
-**Benefits:** Logical progression, each step builds on previous, easy to review.
+### 1. Zero-Shot Prompting
+**Definition:** Providing a task to the AI without any prior examples, relying solely on detailed instructions.
+
+**When Used:**
+- Initial project scaffolding and setup
+- Creating new components or services from scratch
+- Generating configuration files
+- Implementing well-established patterns (JWT auth, CORS setup)
+
+**Example:**
+```
+Create a C# service that:
+- Accepts a folder path
+- Scans for: package.json, *.csproj, requirements.txt, Gemfile
+- Extracts framework names and versions
+- Returns structured data
+```
+
+**Why It Worked:** Clear, comprehensive instructions with specific requirements allowed AI to generate correct implementations without needing examples.
 
 ---
 
-### Pattern 2: Error-Driven Refinement
-**Workflow:**
-1. Try implementation
-2. Get error
-3. Prompt: "Here's the error: [paste]. In [file.ts](path/file.ts#L50). Here's the code: [snippet]. How to fix?"
+### 2. Few-Shot Prompting
+**Definition:** Providing one or more examples to guide the AI's output format and style.
 
-**Benefits:** Precise diagnosis, focused fix, no over-refactoring.
+**When Used:**
+- Adding similar parsers for different package managers
+- Extending existing functionality with new formats
+- Creating components with consistent patterns
+- Writing tests following established structure
+
+**Example:**
+```
+Add Ruby detection (Gemfile) to ScanService following the same pattern 
+as npm detection in apps/api/Services/ScanService.cs lines 45-60.
+```
+
+**Why It Worked:** Referencing existing implementations ensured consistency across codebase and reduced need for detailed specifications.
+
+---
+
+### 3. Interactive Prompting
+**Definition:** Iterative dialogue where each prompt builds on previous responses, with verification at each step.
+
+**When Used:**
+- Debugging complex issues
+- Refining implementations based on test results
+- Multi-step feature development
+- Configuration troubleshooting
+
+**Example Workflow:**
+```
+1. "Implement scan queue service"
+   → AI provides implementation
+2. "Test fails with NullReferenceException at line 45"
+   → AI provides fix
+3. "Works but scan status not updating in UI"
+   → AI identifies missing SignalR setup
+4. "SignalR added, verify the flow"
+   → AI confirms implementation
+```
+
+**Why It Worked:** 
+- Allowed course correction without starting over
+- Leveraged AI's ability to maintain context across conversation
+- Enabled incremental refinement with validation at each step
+- Reduced risk of large-scale refactoring
 
 ---
 
 ## 🚀 Recommendations for Future Projects
 
-### 1. Start with Comprehensive Guide
+### 1. Start with Comprehensive Guide 0. Детальная проработка архитектуры и 
 Create a detailed guide document before coding:
 - Tech stack with versions
 - Folder structure
@@ -260,24 +230,7 @@ Reference it in every prompt: `#file:guide.md`
 
 ---
 
-### 2. Use Session-Based Development
-Group related prompts into sessions:
-- **Session goal** at the start
-- **Session outcome** at the end
-- Verify before moving to next session
-
----
-
-### 3. Maintain Prompt Log in Real-Time
-Don't wait until end to document:
-- Copy prompt after sending
-- Paste response summary
-- Note acceptance rate immediately
-- Track manual edits as you make them
-
----
-
-### 4. Checkpoint Often
+### 2. Checkpoint Often
 After every significant change:
 - Run build
 - Run tests
@@ -288,7 +241,7 @@ If something breaks, you know exactly which prompt caused it.
 
 ---
 
-### 5. Use AI for Documentation Too
+### 3. Use AI for Documentation Too
 Don't write docs manually:
 - Generate README sections with AI
 - Have AI create setup instructions
@@ -296,16 +249,64 @@ Don't write docs manually:
 
 ---
 
-## 💡 Key Takeaways
+### 4. Prefer Claude Sonnet 4.5 for Complex Tasks
+Personal preference based on this project:
+- Responses were more precise and accurate
+- Output formatting and action explanations were more convenient for review
+- Better at understanding complex multi-step requirements
+- More consistent code quality across iterations
 
-1. **Specificity matters**: Exact versions, file paths, and constraints eliminate ambiguity.
-2. **Incremental wins**: Small verified steps > large unverified leaps.
-3. **Context is king**: AI performs best with full picture of project state.
-4. **Verification is mandatory**: Never assume generated code works without testing.
-5. **Patterns over instructions**: Reference existing code patterns when possible.
-6. **Document as you go**: Prompt log becomes invaluable for understanding evolution.
-7. **Architecture first**: Planning before implementation saves refactor time.
-8. **Error messages are goldmines**: Paste full errors for precise fixes.
+**Recommendation:** Start with Claude Sonnet 4.5 for architecture and complex features, use GPT models for simpler tasks.
+
+---
+
+### 5. TDD Approach Requires Better Architecture Planning
+Test-Driven Development with AI can be highly effective, but requires:
+- Clear upfront architecture design
+- Well-defined interfaces and contracts before implementation
+- Comprehensive test scenarios planned before coding
+- More time investment in planning phase
+
+**Recommendation:** For future projects, invest more time in architecture phase before starting TDD cycle with AI.
+
+---
+
+### 6. Don't Move Project Files During Active Session
+**Critical:** Avoid moving or renaming project folders/files that are open and actively referenced in VS Code Copilot session.
+
+**Risk:** Moving files can cause:
+- Loss of session context
+- AI losing track of file references
+- Need to restart conversation with full context reload
+
+**Recommendation:** Keep project structure stable during active development sessions. Plan folder structure in advance.
+
+---
+
+### 7. Consider MS 365 Copilot for Non-Coding Tasks
+MS 365 Copilot doesn't use premium tokens from GitHub Copilot subscription.
+
+**Use cases:**
+- Initial project ideation and planning
+- Documentation drafting
+- Prompt refinement and optimization
+- Architecture brainstorming
+
+**Recommendation:** Use MS 365 Copilot for planning phases, GitHub Copilot for implementation.
+
+---
+
+### 8. Verify No Corporate/Machine Restrictions
+Before starting AI-assisted development, ensure:
+- No firewall blocking AI service endpoints
+- No corporate policies preventing AI tool usage
+- No proxy issues with authentication
+- Full admin rights for installing dependencies
+- Adequate disk space and system resources
+
+**Risk:** Restrictions can cause unpredictable difficulties at any development stage or during agent work.
+
+**Recommendation:** Test full AI access and development environment setup before committing to project timeline.
 
 ---
 

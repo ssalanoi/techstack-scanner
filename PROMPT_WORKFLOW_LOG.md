@@ -19,11 +19,22 @@ Documentation of AI-assisted development process for TechStack Scanner. On this 
 | 6. Outdated dependencies functionality Implementation | GitHub Copilot (VS Code) | Claude Sonnet 4.5 | Project finalization |
 | 7. Documentation | GitHub Copilot (VS Code) | Claude Sonnet 4.5 | Project finalization |
 
-### MCP Servers
+### Model Context Protocol (MCP)
 
-| MCP Server | Features Used |
-|------------|---------------|
-| GitHub MCP | Repository context (name, owner, branch) |
+#### MCP Servers Used in This Project
+
+**GitHub MCP Server (Basic)** ✅
+
+The **only** MCP server used in this project was the basic GitHub MCP, which provided:
+- Repository context (name, owner, current branch)
+- Basic repository metadata
+
+#### Actual Development Workflow
+
+- **Git Operations:** Executed manually via PowerShell/terminal (`git add`, `git commit`, `git push`, `git status`)
+- **Docker Operations:** Executed manually via `docker-compose` commands (`docker-compose up`, `docker-compose down`)
+- **Repository Context:** Provided automatically by basic GitHub MCP (repository name, owner, branch only)
+- **No Advanced MCP Servers:** No custom or advanced MCP servers were used, as the basic GitHub MCP sufficed for context needs.
 
 ---
 

@@ -1507,7 +1507,6 @@ Create main README.md with project overview, architecture, and tech stack
 
 - [README.md](README.md) - Project overview
 - [AI_DEVELOPMENT.md](AI_DEVELOPMENT.md) - AI development guide
-- [INSIGHTS_PROMPTING_STRATEGIES.md](INSIGHTS_PROMPTING_STRATEGIES.md) - Prompting strategies
-- [INSIGHTS_DEVELOPMENT_LESSONS.md](INSIGHTS_DEVELOPMENT_LESSONS.md) - Development lessons
+- [PROMPTING_INSIGHTS.md](PROMPTING_INSIGHTS.md) - Prompting insights and best practices
 
 ---

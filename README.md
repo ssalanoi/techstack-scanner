@@ -607,14 +607,7 @@ This project was developed entirely using **GitHub Copilot** (Claude Sonnet 4.5)
 - 🤖 LLM integration for AI-powered insights
 
 ### More about AI-Assisted Development?
-See [AI_DEVELOPMENT.md](AI_DEVELOPMENT.md) for project overview and quick links, plus:
-
-**Prompt Histories:**
-- [PROMPTS_DOCKER_CONFIGURATION.md](PROMPTS_DOCKER_CONFIGURATION.md) - Docker setup and SSL issues
-- [PROMPTS_DOCUMENTATION.md](PROMPTS_DOCUMENTATION.md) - Translation and consolidation
-
-**Insights & Best Practices:**
-- [INSIGHTS_PROMPTING_STRATEGIES.md](INSIGHTS_PROMPTING_STRATEGIES.md) - Effective prompting techniques
+See [AI_DEVELOPMENT.md](AI_DEVELOPMENT.md) for project overview and quick links.
 
 ## 📖 Additional Documentation
 

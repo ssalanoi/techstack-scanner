@@ -45,10 +45,6 @@ The project progressed through 10 major phases:
 9. **Documentation** - Translation, consolidation, README creation
 10. **AI Transparency** - Documented development process
 
-For detailed prompt histories by topic:
-- **[Docker Configuration Prompts](PROMPTS_DOCKER_CONFIGURATION.md)** - Docker setup, SSL issues, Ollama configuration
-- **[Documentation Prompts](PROMPTS_DOCUMENTATION.md)** - Translation, consolidation, README creation
-
 ---
 
 ## 🛠️ Tools & Technologies
@@ -112,15 +108,6 @@ The **only** MCP server used in this project was the basic GitHub MCP, which pro
 
 ## 📚 Documentation Structure
 
-This project uses a modular documentation approach. Each major topic has its own dedicated file:
-
-### Prompt Histories
-- **[PROMPTS_DOCKER_CONFIGURATION.md](PROMPTS_DOCKER_CONFIGURATION.md)** - Docker setup, SSL certificate issues, Ollama configuration, local volume mounting
-- **[PROMPTS_DOCUMENTATION.md](PROMPTS_DOCUMENTATION.md)** - Translation, guide consolidation, README creation, version corrections
-
-### Insights & Best Practices
-- **[INSIGHTS_PROMPTING_STRATEGIES.md](INSIGHTS_PROMPTING_STRATEGIES.md)** - Effective prompting techniques, patterns library, anti-patterns, success criteria
-
 ---
 
 ## 🔗 Quick Links
@@ -132,11 +119,8 @@ This project uses a modular documentation approach. Each major topic has its own
 ### Development
 - [DOCKER.md](DOCKER.md) - Docker setup and Ollama configuration
 - [E2E_VERIFICATION.md](E2E_VERIFICATION.md) - End-to-end testing guide
-
-### AI Development Documentation
-- [PROMPTS_DOCKER_CONFIGURATION.md](PROMPTS_DOCKER_CONFIGURATION.md) - Docker & Ollama prompts
-- [PROMPTS_DOCUMENTATION.md](PROMPTS_DOCUMENTATION.md) - Documentation prompts
-- [INSIGHTS_PROMPTING_STRATEGIES.md](INSIGHTS_PROMPTING_STRATEGIES.md) - Prompting best practices
+- [PROMPT_WORKFLOW_LOG.md](PROMPT_WORKFLOW_LOG.md) - Complete prompt history and development workflow
+- [PROMPTING_INSIGHTS.md](PROMPTING_INSIGHTS.md) - Observations and lessons learned from AI-assisted development
 
 ---
 

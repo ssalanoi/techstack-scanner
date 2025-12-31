@@ -22,6 +22,7 @@ A comprehensive tool for scanning software projects to detect technologies, depe
 - [Docker Support](#-docker-support)
 - [Contributing](#-contributing)
 - [License](#-license)
+- [AI Development](#-built-with-ai)
 
 ## 🎯 Overview
 
@@ -38,7 +39,7 @@ The scanner integrates with **Ollama** (local LLM) to generate intelligent summa
 
 ### Core Functionality
 - 🔎 **Multi-language Detection** - Supports npm, NuGet, pip, PyPI, RubyGems, Go modules, Maven, Gradle
-- 📦 **Dependency Scanning** - Parses `package.json`, `*.csproj`, `requirements.txt`, `Gemfile`, `go.mod`, `pom.xml`, `build.gradle`
+- 📦 **Dependency Scanning** - Parses `package.json`, `*.csproj`, `*.cs`, `*.ts`, `*.tsx*`
 - 🐳 **Docker Analysis** - Detects Dockerfiles and docker-compose configurations
 - 📊 **Dashboard** - Visual overview of technologies across all scanned projects
 - 🤖 **AI Insights** - Optional LLM-powered analysis via Ollama (llama3.2)
@@ -288,7 +289,6 @@ techstack-scanner/
 │   └── tsconfig.base.json
 │
 ├── QUICK_START.md                    # Quick setup guide
-├── START.md                          # Step-by-step instructions
 ├── DOCKER.md                         # Docker documentation
 ├── E2E_VERIFICATION.md               # Testing guide
 └── README.md                         # This file
@@ -607,20 +607,23 @@ This project was developed entirely using **GitHub Copilot** (Claude Sonnet 4.5)
 - 🤖 LLM integration for AI-powered insights
 
 ### More about AI-Assisted Development?
-See [AI_DEVELOPMENT.md](AI_DEVELOPMENT.md) for:
-- **Prompt history** - Key development steps and iterations
-- **Tools & MCP servers** - Technologies and integrations used
-- **Insights & recommendations** - Best practices for AI-assisted development
-- **Lessons learned** - What worked well and what to improve
+See [AI_DEVELOPMENT.md](AI_DEVELOPMENT.md) for project overview and quick links, plus:
+
+**Prompt Histories:**
+- [PROMPTS_DOCKER_CONFIGURATION.md](PROMPTS_DOCKER_CONFIGURATION.md) - Docker setup and SSL issues
+- [PROMPTS_DOCUMENTATION.md](PROMPTS_DOCUMENTATION.md) - Translation and consolidation
+
+**Insights & Best Practices:**
+- [INSIGHTS_PROMPTING_STRATEGIES.md](INSIGHTS_PROMPTING_STRATEGIES.md) - Effective prompting techniques
 
 ## 📖 Additional Documentation
 
-- [QUICK_START.md](QUICK_START.md) - Fastest way to get started
-- [START.md](START.md) - Detailed step-by-step setup
+- [QUICK_START.md](QUICK_START.md) - Quick setup guide with all steps
 - [DOCKER.md](DOCKER.md) - Complete Docker guide for Ollama
 - [E2E_VERIFICATION.md](E2E_VERIFICATION.md) - Testing and verification
-- [AI_DEVELOPMENT.md](AI_DEVELOPMENT.md) - AI-assisted development guide
-- [.github/copilot-instructions.md](.github/copilot-instructions.md) - AI assistant guide
+- [AI_DEVELOPMENT.md](AI_DEVELOPMENT.md) - AI-assisted development overview
+- [PROMPT_WORKFLOW_LOG.md](PROMPT_WORKFLOW_LOG.md) - Complete prompt history and development workflow
+- [PROMPTING_INSIGHTS.md](PROMPTING_INSIGHTS.md) - Observations and lessons learned from AI-assisted development
 
 ## 🤝 Contributing
 

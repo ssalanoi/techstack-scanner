@@ -176,4 +176,4 @@ docker system prune -a --volumes
 
 ---
 
-**Note**: This Docker setup is for **Ollama only**. The API and Web applications run locally for development. See [START.md](START.md) for complete setup instructions.
+**Note**: This Docker setup is for **Ollama only**. The API and Web applications run locally for development. See [QUICK_START.md](QUICK_START.md) for complete setup instructions.

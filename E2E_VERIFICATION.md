@@ -82,7 +82,7 @@
 - [x] **.dockerignore** - Present
 - [x] **init-ollama.sh** - Script for model initialization
 - [x] **DOCKER.md** - Comprehensive guide for Ollama
-- [x] **START.md** - Quick start guide with Docker Ollama
+- [x] **QUICK_START.md** - Quick start guide with all setup steps
 
 ---
 

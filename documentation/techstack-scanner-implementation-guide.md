@@ -1,6 +1,6 @@
 # TechStack Scanner - Project Implementation Plan
 
-## Improved Initial Prompt (English)
+## Improved Initial Prompt
 
 ```
 I am a .NET developer with React experience, currently taking a GitHub Copilot course. 
@@ -401,5 +401,3 @@ Ready to begin?
 Good luck with your project! 🚀
 
 ---
-
-**Generated on:** December 17, 2025

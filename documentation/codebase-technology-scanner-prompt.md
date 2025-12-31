@@ -226,5 +226,3 @@ Version‑sensitive rules:
 - IsOutdated and LatestVersion fields in TechnologyFinding entity
 
 ---
-
-**Generated on:** December 17, 2025

@@ -5,10 +5,10 @@ This document provides a high-level overview of how TechStack Scanner was develo
 ## 📋 Table of Contents
 
 - [Project Overview](#-project-overview)
-- [Tools & Technologies](#-tools--technologies)
-- [Tech Stack](#tech-stack)
+- [Tools & Technologies](#-tools-technologies)
 - [Model Context Protocol (MCP)](#-model-context-protocol-mcp)
 - [Quick Links](#-quick-links)
+- [Tech Stack](#tech-stack)
 - [Key Takeaways](#-key-takeaways)
 
 ---

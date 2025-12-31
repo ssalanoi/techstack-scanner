@@ -30,23 +30,6 @@ The entire project was built through conversational AI interaction over approxim
 
 ---
 
-## 📅 Development Timeline
-
-The project progressed through 10 major phases:
-
-1. **Project Setup & Database** - ASP.NET Core 10, EF Core, SQLite
-2. **Core Scanning Service** - Multi-format technology detection
-3. **Background Processing** - QueueService + ScanWorkerService
-4. **LLM Integration** - Ollama integration with retry logic
-5. **Outdated Detection** - npm registry integration
-6. **Testing** - 38 unit tests
-7. **React Frontend** - Complete UI with authentication
-8. **Docker Configuration** - Simplified to Ollama-only setup
-9. **Documentation** - Translation, consolidation, README creation
-10. **AI Transparency** - Documented development process
-
----
-
 ## 🛠️ Tools & Technologies
 
 ### AI Development Tools
@@ -62,33 +45,7 @@ The project progressed through 10 major phases:
   - Documentation writing (Markdown)
   - Code explanation and architecture design
 
-### Tech Stack
-
-**Backend:**
-- ASP.NET Core 10.0
-- Entity Framework Core 9.0
-- SQLite 3
-- Serilog (logging)
-- xUnit, Moq, FluentAssertions (testing)
-
-**Frontend:**
-- React 18.3
-- TypeScript 5.6
-- Vite 6.0
-- React Router 7.0
-- Mantine 7.13
-- TanStack Query 5.62
-- Axios 1.7
-
-**AI & Infrastructure:**
-- Ollama (llama3.2 model)
-- Docker (Ollama containerization)
-- pnpm (package management)
-
----
-
 ## 🔌 Model Context Protocol (MCP)
-
 
 ### MCP Servers Used in This Project
 
@@ -119,6 +76,29 @@ The **only** MCP server used in this project was the basic GitHub MCP, which pro
 - [PROMPTING_INSIGHTS.md](PROMPTING_INSIGHTS.md) - Observations from AI-assisted development
 
 ---
+
+### Tech Stack
+
+**Backend:**
+- ASP.NET Core 10.0
+- Entity Framework Core 9.0
+- SQLite 3
+- Serilog (logging)
+- xUnit, Moq, FluentAssertions (testing)
+
+**Frontend:**
+- React 18.3
+- TypeScript 5.6
+- Vite 6.0
+- React Router 7.0
+- Mantine 7.13
+- TanStack Query 5.62
+- Axios 1.7
+
+**AI & Infrastructure:**
+- Ollama (llama3.2 model)
+- Docker (Ollama containerization)
+- pnpm (package management)
 
 ## 💡 Key Takeaways
 

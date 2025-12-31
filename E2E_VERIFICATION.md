@@ -63,7 +63,7 @@
 - [x] **CORS** - Configured for http://localhost:5173
 - [x] **Swagger** - Available in development mode
 - [x] **Health Endpoint** - Added and functional
-- [x] **Outdated Dependency Detection** - Automated checks against npm, NuGet, PyPI, RubyGems ⭐ NEW
+- [x] **Outdated Dependency Detection** - Automated checks against npm, NuGet, PyPI, RubyGems
 
 ### Frontend (Web)
 - [x] **React 18+** - Running

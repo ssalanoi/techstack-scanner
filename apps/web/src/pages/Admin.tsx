@@ -18,7 +18,7 @@ import { notifications } from '@mantine/notifications';
 export default function Admin() {
   const [scanSettings, setScanSettings] = useState({
     maxDepth: 5,
-    filePatterns: '**/*.ts\n**/*.tsx\n**/*.cs\n**/*.csproj\npackage.json',
+    filePatterns: 'package.json\n*.csproj\nglobal.json\nrequirements.txt\npyproject.toml\nGemfile\nGemfile.lock\ngo.mod\ngo.sum\npom.xml\nbuild.gradle\nDockerfile\ndocker-compose.yml',
   });
 
   const [llmSettings, setLlmSettings] = useState({
@@ -58,7 +58,7 @@ export default function Admin() {
       if (confirmAction === 'resetSettings') {
         setScanSettings({
           maxDepth: 5,
-          filePatterns: '**/*.ts\n**/*.tsx\n**/*.cs\n**/*.csproj\npackage.json',
+          filePatterns: 'package.json\n*.csproj\nglobal.json\nrequirements.txt\npyproject.toml\nGemfile\nGemfile.lock\ngo.mod\ngo.sum\npom.xml\nbuild.gradle\nDockerfile\ndocker-compose.yml',
         });
         setLlmSettings({ host: 'http://localhost:11434', model: 'llama3.2', timeoutSeconds: 60 });
       }

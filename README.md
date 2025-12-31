@@ -2,8 +2,7 @@
 
 [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 
 A comprehensive tool for scanning software projects to detect technologies, dependencies, and generate AI-powered insights. Built with ASP.NET Core, React, and Ollama LLM integration.
 
@@ -39,8 +38,8 @@ The scanner integrates with **Ollama** (local LLM) to generate intelligent summa
 
 ### Core Functionality
 - 🔎 **Multi-language Detection** - Supports npm, NuGet, pip, PyPI, RubyGems, Go modules, Maven, Gradle
-- 📦 **Dependency Scanning** - Parses `package.json`, `*.csproj`, `*.cs`, `*.ts`, `*.tsx*`
-- 🐳 **Docker Analysis** - Detects Dockerfiles and docker-compose configurations
+- 📦 **Dependency Scanning** - Parses `package.json`, `*.csproj`, `global.json`, `requirements.txt`, `pyproject.toml`, `Gemfile`, `Gemfile.lock`, `go.mod`, `go.sum`, `pom.xml`, `build.gradle`
+- 🐳 **Docker Analysis** - Detects `Dockerfile` and `docker-compose.yml` configurations
 - 📊 **Dashboard** - Visual overview of technologies across all scanned projects
 - 🤖 **AI Insights** - Optional LLM-powered analysis via Ollama (llama3.2)
 - ⏰ **Outdated Dependencies** - Automatic detection of outdated packages with latest version lookup
@@ -139,19 +138,19 @@ Frontend polls status → displays results
 - **Language:** C# 13
 - **ORM:** Entity Framework Core 9.0
 - **Database:** SQLite 3
-- **Logging:** Serilog 9.0
-- **Auth:** JWT Bearer tokens
+- **Logging:** Serilog 8.0
+- **Auth:** JWT Bearer tokens (9.0)
 - **Testing:** xUnit, Moq, FluentAssertions
 
 ### Frontend
 - **Framework:** React 18.3
-- **Language:** TypeScript 5.7
-- **Build Tool:** Vite 6.4
-- **Router:** React Router 7
-- **UI Library:** Mantine 7.16
-- **State:** TanStack Query v5
-- **HTTP Client:** Axios
-- **Testing:** Vitest, Testing Library
+- **Language:** TypeScript 5.6
+- **Build Tool:** Vite 6.0
+- **Router:** React Router 7.0
+- **UI Library:** Mantine 7.13
+- **State:** TanStack Query v5.62
+- **HTTP Client:** Axios 1.7
+- **Testing:** Vitest 2.1, Testing Library 16.1
 
 ### AI Integration
 - **LLM Platform:** Ollama (local)
@@ -636,7 +635,7 @@ Contributions are welcome! Please follow these steps:
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is available for educational and personal use. For commercial use, please contact the author.
 
 ## 👥 Authors
 
@@ -656,7 +655,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Supported Languages:** C#, JavaScript/TypeScript, Python, Ruby, Go, Java
 - **Package Managers:** npm, NuGet, pip, RubyGems, Go modules, Maven, Gradle
 - **API Endpoints:** 15+
-- **React Components:** 20+
+- **React Components:** 9 components
 
 ---
 

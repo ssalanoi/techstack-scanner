@@ -73,12 +73,12 @@ The project progressed through 10 major phases:
 
 **Frontend:**
 - React 18.3
-- TypeScript 5.7
-- Vite 6.4
-- React Router v7
-- Mantine UI 7.16
-- TanStack Query 5.67
-- Axios
+- TypeScript 5.6
+- Vite 6.0
+- React Router 7.0
+- Mantine 7.13
+- TanStack Query 5.62
+- Axios 1.7
 
 **AI & Infrastructure:**
 - Ollama (llama3.2 model)
@@ -103,11 +103,7 @@ The **only** MCP server used in this project was the basic GitHub MCP, which pro
 - **Git Operations:** Executed manually via PowerShell/terminal (`git add`, `git commit`, `git push`, `git status`)
 - **Docker Operations:** Executed manually via `docker-compose` commands (`docker-compose up`, `docker-compose down`)
 - **Repository Context:** Provided automatically by basic GitHub MCP (repository name, owner, branch only)
-
----
-
-## 📚 Documentation Structure
-
+- **No Advanced MCP Servers:** No custom or advanced MCP servers were used, as the basic GitHub MCP sufficed for context needs.
 ---
 
 ## 🔗 Quick Links
@@ -119,8 +115,8 @@ The **only** MCP server used in this project was the basic GitHub MCP, which pro
 ### Development
 - [DOCKER.md](DOCKER.md) - Docker setup and Ollama configuration
 - [E2E_VERIFICATION.md](E2E_VERIFICATION.md) - End-to-end testing guide
-- [PROMPT_WORKFLOW_LOG.md](PROMPT_WORKFLOW_LOG.md) - Complete prompt history and development workflow
-- [PROMPTING_INSIGHTS.md](PROMPTING_INSIGHTS.md) - Observations and lessons learned from AI-assisted development
+- [PROMPT_WORKFLOW_LOG.md](PROMPT_WORKFLOW_LOG.md) - Prompt history and development workflow
+- [PROMPTING_INSIGHTS.md](PROMPTING_INSIGHTS.md) - Observations from AI-assisted development
 
 ---
 

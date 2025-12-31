@@ -34,6 +34,8 @@ TechStack Scanner is a monorepo application that analyzes software project direc
 
 The scanner integrates with **Ollama** (local LLM) to generate intelligent summaries and recommendations for detected technologies.
 
+![TechStack Scanner Dashboard](documentation/techstackscanner_initial.png)
+
 ## ✨ Features
 
 ### Core Functionality
@@ -43,7 +45,7 @@ The scanner integrates with **Ollama** (local LLM) to generate intelligent summa
 - 📊 **Dashboard** - Visual overview of technologies across all scanned projects
 - 🤖 **AI Insights** - Optional LLM-powered analysis via Ollama (llama3.2)
 - ⏰ **Outdated Dependencies** - Automatic detection of outdated packages with latest version lookup
-- 🔐 **JWT Authentication** - Secure admin-only scanning operations
+- 🔐 **JWT Authentication** - Secure admin-only scanning operations (admin area for demonstration purposes only)
 
 ### Technical Highlights
 - ✅ **38 Unit Tests** - Comprehensive test coverage for scanning logic
@@ -506,6 +508,8 @@ docker compose exec ollama ollama run llama3.2 "Hello"
 See [DOCKER.md](DOCKER.md) for detailed documentation.
 
 ## 🎮 Usage Guide
+
+> **Note:** The admin area and authentication are for **demonstration purposes only**. This project showcases AI-assisted development and is not intended for production use without proper security hardening.
 
 ### 1. Login
 Navigate to `http://localhost:5173/login` and use default credentials:

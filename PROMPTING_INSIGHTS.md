@@ -1,4 +1,4 @@
-# Prompting Insights & Learnings
+# Prompting Insights
 
 Observations from using AI assistants during TechStack Scanner development.
 

@@ -219,14 +219,52 @@ as npm detection in apps/api/Services/ScanService.cs lines 45-60.
 
 ## 🚀 Recommendations for Future Projects
 
-### 1. Start with Comprehensive Guide 0. Детальная проработка архитектуры и 
-Create a detailed guide document before coding:
-- Tech stack with versions
-- Folder structure
-- Step-by-step phases
-- Success criteria per phase
+### 1. Detailed Architecture & Prompt Hierarchy Planning
+Before writing any code, invest time in comprehensive planning:
 
-Reference it in every prompt: `#file:guide.md`
+**Architecture & Requirements:**
+- Detailed architecture design with components, relationships, and data flows
+- Clear understanding of project's end goal and its value/purpose
+- Break down high-level goals into concrete, actionable tasks
+- Define success criteria for each component and phase
+
+**Prompt Hierarchy Creation:**
+- Create not just a single guide, but an entire hierarchy of prompts:
+  - **Level 0**: High-level project vision and architecture document
+  - **Level 1**: Phase-by-phase implementation guide with checkpoints
+  - **Level 2**: Component-specific detailed prompts with examples
+  - **Level 3**: Refinement and optimization prompts for specific scenarios
+- Each level references previous levels for context
+
+**Essential Documentation:**
+- Tech stack with exact versions
+- Folder structure and file organization
+- Step-by-step phases with dependencies
+- Success criteria per phase
+- Environment setup and prerequisites
+
+**Why This Matters:**
+- Reduces rework and refactoring
+- Provides clear context for AI at every stage
+- Enables jumping back to any phase if needed
+- Creates reusable prompt patterns for similar projects
+
+**Example Structure:**
+```
+documentation/
+  ├── project-vision.md          # Level 0: Why, what, for whom
+  ├── architecture-guide.md      # Level 0: System design
+  ├── implementation-guide.md    # Level 1: Step-by-step execution
+  ├── component-prompts/         # Level 2: Specific implementations
+  │   ├── auth-setup.md
+  │   ├── scanner-service.md
+  │   └── ui-components.md
+  └── optimization-prompts/      # Level 3: Refinements
+      ├── performance.md
+      └── testing.md
+```
+
+Reference appropriate level in each prompt: `#file:documentation/auth-setup.md`
 
 ---
 

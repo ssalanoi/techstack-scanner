@@ -10,14 +10,14 @@ Documentation of AI-assisted development process for TechStack Scanner. On this 
 
 | Stage | Tool | Model(s) | Purpose |
 |-------|------|-------|---------|
-| 1. Initial Concept (initial prompt) | MS 365 Copilot | GPT-5 | Created initial project prompt and concept |
-| 2. Initial Prompt improvement | GitHub Copilot (VS Code) | GPT-5.1 Codex Max | Initial prompt implementation and prototyping |
-| 3. Final Prompt | GitHub Copilot (VS Code) | Claude Sonnet 4.5 | Final prompt implementation |
-| 4. Early Development | GitHub Copilot (VS Code) | GPT-5.1 Codex Max | Initial implementation |
-| 5. Main Development and ongoing Fixes | GitHub Copilot (VS Code) | GPT-5.1 Codex Max & Claude Sonnet 4.5 | Complete main part implementation |
-| 6. E2E Verification | GitHub Copilot (VS Code) | Claude Sonnet 4.5 | e2e tests and final verification |
-| 7. Outdated dependencies functionality Implementation | GitHub Copilot (VS Code) | Claude Sonnet 4.5 | Project finalization |
-| 8. Documentation | GitHub Copilot (VS Code) | Claude Sonnet 4.5 | Project finalization |
+| [1. Initial Concept](#-stage-1-initial-concept-ms-365-copilot---gpt-5) | MS 365 Copilot | GPT-5 | Project idea selection and tech stack confirmation |
+| [2. Initial Prompt Improvement](#-stage-2-initial-prompt-improvement-github-copilot---gpt-51-codex-max) | GitHub Copilot (VS Code) | GPT-5.1 Codex Max | Detailed implementation plan with phases and prerequisites |
+| [3. Final Prompt Generation](#-stage-3-final-prompt-generation-github-copilot---claude-sonnet-45) | GitHub Copilot (VS Code) | Claude Sonnet 4.5 | Comprehensive merged guide for project execution |
+| [4. Early Development](#-stage-4-early-development-github-copilot---gpt-51-codex-max) | GitHub Copilot (VS Code) | GPT-5.1 Codex Max | Monorepo scaffolding, database setup, JWT authentication |
+| [5. Main Development](#-stage-5-main-development-github-copilot---gpt-51-codex-max--claude-sonnet-45) | GitHub Copilot (VS Code) | GPT-5.1 Codex Max & Claude Sonnet 4.5 | Scanner service, UI components, background processing, tests |
+| [6. E2E Verification](#-stage-6-e2e-verification) | GitHub Copilot (VS Code) | Claude Sonnet 4.5 | End-to-end testing and Docker containerization |
+| [7. Outdated Dependencies](#-stage-7-outdated-dependencies-functionality-implementation) | GitHub Copilot (VS Code) | Claude Sonnet 4.5 | Dependency tracking with registry checks and comprehensive tests |
+| [8. Documentation](#-stage-8-documentation) | GitHub Copilot (VS Code) | Claude Sonnet 4.5 | README, guides, and project documentation |
 
 ## 🔌 Model Context Protocol (MCP)
 
@@ -44,7 +44,7 @@ The **only** MCP server used in this project was the basic GitHub MCP, which pro
 
 ## 📝 Stage 1: Initial Concept (MS 365 Copilot - GPT-5)
 
-### Session 1: Project Idea Selection
+### Session: Project Idea Selection
 **Goal:** Choose appropriate project idea, confirm tech stack and get final initial prompt.
 
 #### Prompt 1.1: Exploring Project Options
@@ -323,7 +323,7 @@ Start with Task A now.
 
 ## 📝 Stage 2: Initial Prompt Improvement (GitHub Copilot - GPT-5.1 Codex Max)
 
-### Session 1: Initial Prompt Refinement
+### Session: Initial Prompt Refinement
 **Goal:** Generation of improved initial prompt for better clarity and completeness using another model
 
 #### Prompt 2.1: Initial Prompt Refinement
@@ -379,7 +379,7 @@ See detailed implementation plan: [techstack-scanner-implementation-guide.md](do
 
 ## 📝 Stage 3: Final Prompt Generation (GitHub Copilot - Claude-Sonnet 4.5)
 
-### Session 1: Final Prompt Generation
+### Session: Final Prompt Generation
 **Goal:** Generate the final improved initial prompt for project start
 
 #### Prompt 3.1: Initial Prompt Refinement
@@ -411,11 +411,11 @@ See comprehensive guide: [techstack-scanner-comprehensive-guide.md](documentatio
 
 ## 📝 Stage 4: Early Development (GitHub Copilot - GPT-5.1 Codex Max)
 
-### Session 1: 
+### Session: Monorepo Scaffolding
 **Goal:** Scaffold the monorepo and initial project structure
 
 #### Prompt 4.1: Start development
-**Context:** Use the final initial prompt from Stage 3 Session 2 to start the development process.  [techstack-scanner-comprehensive-guide.md](documentation/techstack-scanner-comprehensive-guide.md)
+**Context:** Use the final initial prompt from Stage 3 to start the development process.  [techstack-scanner-comprehensive-guide.md](documentation/techstack-scanner-comprehensive-guide.md)
 **Prompt:**
 ```
 You are my senior coding agent inside VS Code on Windows. We are implementing the full app described in #file:techstack-scanner-comprehensive-guide.md  (React+Vite+TS frontend, ASP.NET Core 9 Web API backend, SQLite+EF Core 9, JWT auth, background queue via Channels, Ollama integration, Docker Compose).
@@ -525,7 +525,7 @@ Please paste your terminal outputs to confirm they match what I saw, and I’ll 
 **Result:** API template generated. React app scaffolded with required dependencies. Monorepo scaffolded successfully, ready for next steps.
 
 #### Prompt 4.2: Development Continue: Phase 1 – Step 1.2.
-**Context:** Use the final initial prompt from Stage 3 Session 2 to start the development process.
+**Context:** Use the final initial prompt from Stage 3 to start the development process.
 **Prompt:**
 ```
 Proceed with Phase 1 – Step 1.2.
@@ -571,7 +571,7 @@ Please run the verification commands and paste the terminal output so I can conf
 **Result:** Added entities, DbContext, Serilog config, initial migration; pending local run of dotnet ef database update to create SQLite DB.
 
 #### Prompt 4.3: Development Continue: Phase 1 - Step 1.3.
-**Context:** Use the final initial prompt from Stage 3 Session 2 to start the development process.
+**Context:** Use the final initial prompt from Stage 3 to start the development process.
 **Prompt:**
 ```
 Proceed with Phase 1 – Step 1.3.
@@ -616,7 +616,7 @@ Please run the verification commands and paste the terminal output so I can conf
 **Result:** Added JWT packages, settings, service, controller; Program wired for auth; login endpoint returns JWT.
 
 #### Prompt 4.4: Trying to continue development: Phase 2 – Step 2.1.
-**Context:** Use the final initial prompt from Stage 3 Session 2 to start the development process.
+**Context:** Use the final initial prompt from Stage 3 to start the development process.
 **Prompt:**
 ```
 Lets implement Phase 2, Step 2.1
@@ -635,14 +635,14 @@ I can’t see the repo files right now—the workspace isn’t open to me, so I 
 
 ---
 
-## 📝 Stage 5: Main Development and ongoing Fixes. Tests. E2E (GitHub Copilot - GPT-5.1 Codex Max)
+## 📝 Stage 5: Main Development (GitHub Copilot - GPT-5.1 Codex Max & Claude Sonnet 4.5)
 
-### Session 1: Continue Main Development
+### Session: Continue Main Development
 **Goal:** Continue development of the techstack-scanner project, implementing the rest Phases 2–6
 
 #### Prompt 5.1: Implement Phase 2, Step 2.1
 **Model Used:** GPT-5.1 Codex Max
-**Context:** Use the final initial prompt from Stage 3 Session 2 to start the development process.
+**Context:** Use the final initial prompt from Stage 3 to start the development process.
 **Prompt:**
 ```
 Lets implement Phase 2, Step 2.1
@@ -688,7 +688,7 @@ dotnet test techstack-scanner.sln now passes (warning only about xUnit resolving
 
 #### Prompt 5.3: Implement Phase 4, Step 4.2
 **Model Used:** GPT-5.1 Codex Max
-**Context:** Use the final initial prompt from Stage 3 Session 2 to start the development process. Project folder is now open in VS Code.
+**Context:** Use the final initial prompt from Stage 3 to start the development process. Project folder is now open in VS Code.
 **Prompt:**
 ```
 Create Projects list and detail pages:
@@ -747,7 +747,7 @@ Tests not run (not requested). Natural next step: 1) run pnpm --filter web test 
 
 #### Prompt 5.4: Implement Phase 5, Step 5.1
 **Model Used:** Claude-Sonnet 4.5
-**Context:** Use the final initial prompt from Stage 3 Session 2 to start the development process.  [techstack-scanner-comprehensive-guide.md](documentation/techstack-scanner-comprehensive-guide.md)
+**Context:** Use the final initial prompt from Stage 3 to start the development process. [techstack-scanner-comprehensive-guide.md](documentation/techstack-scanner-comprehensive-guide.md)
 **Prompt:**
 ```
 Create API service layer and TanStack Query hooks:
@@ -900,7 +900,7 @@ Scaling strategies
 
 ---
 
-## Prompt 5.6: Simplifying Docker Setup
+#### Prompt 5.6: Simplifying Docker Setup
 
 **Objective:** Remove API and Web services from Docker, keep only Ollama
 
@@ -928,7 +928,7 @@ Scaling strategies
 
 **Goal:** Do E2E verification of the full application
 
-#### Prompt 6.1
+#### Prompt 6.1: E2E Verification
 **Prompt:**
 ```
 Verify that full application works properly, do end-to-end. As a result create E2E file.
@@ -1003,7 +1003,7 @@ DOCKER.md - Docker deployment guide
 
 **Goal:** Implement functionality to check for outdated dependencies in the scanned projects.
 
-#### Prompt 7.1
+#### Prompt 7.1: Implement Outdated dependencies functionality
 **Prompt:**
 ```
 Implement Outdated dependencies functionality and add tests to cover this functionality. Run tests to be sure that everything work properly.
@@ -1068,7 +1068,7 @@ The implementation:
 
 **Goal:** Create main README.md with project overview, architecture, and tech stack
 
-#### Prompt 8.1
+#### Prompt 8.1: Create main README.md
 **Prompt:**
 ```
 Create main README.md with project overview, architecture, and tech stack
